@@ -29,7 +29,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         "👋 Send me text and I’ll turn it into voice!\n\n"
         "Commands:\n"
         "/en Your text (English)\n"
-        "/km Your text (Khmer)\n"
+        "/kh Your text (Khmer)\n"
     )
 
 async def text_to_speech(update: Update, context: ContextTypes.DEFAULT_TYPE, lang="en") -> None:
@@ -66,7 +66,7 @@ async def text_to_speech(update: Update, context: ContextTypes.DEFAULT_TYPE, lan
 async def tts_en(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await text_to_speech(update, context, lang="en")
 
-async def tts_km(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def tts_kh(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await text_to_speech(update, context, lang="km")
 
 # --- Main ---
@@ -77,7 +77,7 @@ def main():
     # Register handlers
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("en", tts_en))
-    app.add_handler(CommandHandler("kh", tts_km))
+    app.add_handler(CommandHandler("kh", tts_kh))
 
     print("🤖 Bot is running...")
     app.run_polling()
